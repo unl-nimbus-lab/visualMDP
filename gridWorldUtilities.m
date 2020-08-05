@@ -304,8 +304,8 @@ classdef gridWorldUtilities
                                 T(r+(c-1)*m,(r+1)+(c-1)*m,actionIdx) = 0 ; % Set ending up left to 0 
                             end
 
-                            %consider right side of the obstacle exists: 0_r,o_c-1]
-                            if(o_c-1 ~= 0)
+                            %consider right side of the obstacle exists: 0_r,o_c+1]
+                            if(o_c+1 ~= n+1)
                                 r = o_r ; c = o_c+1 ;                     
                                 T(r+(c-1)*m,r+(c-1)*m,actionIdx) = T(r+(c-1)*m,r+(c-1)*m,actionIdx) + T(r+(c-1)*m,r+(c-2)*m,actionIdx); % Add moving forward probability
                                 T(r+(c-1)*m,r+(c-2)*m,actionIdx) = 0 ; % % Set moving forward to 0
